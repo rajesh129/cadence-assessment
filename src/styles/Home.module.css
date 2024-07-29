@@ -1,0 +1,5 @@
+.task__container {
+  display: flex;
+  padding: 20px;
+  justify-content: space-evenly;
+}
