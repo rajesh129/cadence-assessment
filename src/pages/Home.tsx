@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import AddTask from "../components/AddTask";
 import { Poppins } from "next/font/google";
+import withErrorBoundary from "@/components/withErrorBoundary";
 
 const poppins = Poppins({
     subsets: ['latin'],
@@ -10,7 +11,7 @@ const poppins = Poppins({
     weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
   });
 
-export default function App() {
+function App() {
   const [taskList, setTaskList] = useState<any>([]);
   const [getRowId, setRowId] = useState<string>('');
   const [selectedRow, setSelectedRow] = useState<any>(null);
@@ -101,3 +102,5 @@ export default function App() {
     </div>
   );
 }
+
+export default withErrorBoundary(App);
